@@ -1,0 +1,129 @@
+:root {
+  --clr-white: 0, 0%, 100%;
+  --clr-light-grey: 217, 12%, 63%;
+  --clr-medium-grey: 216, 12%, 54%;
+  --clr-dark-blue: 213, 19%, 18%;
+  --clr-very-dark-blue: 216, 12%, 8%;
+  --clr-orange: 25, 97%, 53%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  font-size: 0.9375rem;
+  background-color: hsl(var(--clr-very-dark-blue));
+  color: hsl(var(--clr-white));
+  line-height: 1.6;
+}
+
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card[aria-selected="true"] {
+  padding: 2rem;
+  background-color: hsl(var(--clr-dark-blue), 0.5);
+  border-radius: 20px;
+  height: 350px;
+  max-width: 324px;
+  position: absolute;
+}
+
+.card[aria-selected="false"] {
+  z-index: -1;
+  opacity: 0;
+}
+
+.card--back {
+  text-align: center;
+}
+
+.card > * {
+  margin-bottom: 0.5em;
+}
+
+.card__icon {
+  background-color: hsl(var(--clr-dark-blue));
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.card__content {
+  color: hsl(var(--clr-light-grey));
+}
+
+.card__options {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__option {
+  padding: 0.5rem 1rem;
+  background-color: hsla(var(--clr-dark-blue));
+  border-radius: 50%;
+  transition: 300ms ease-in-out;
+}
+
+.card__option:hover {
+  background-color: hsl(var(--clr-light-grey));
+  cursor: pointer;
+}
+
+.card__option:focus,
+.card__option:active,
+.card__option[aria-selected="true"] {
+  background-color: hsl(var(--clr-orange));
+}
+
+.card__result {
+  background-color: hsl(var(--clr-dark-blue));
+  padding: 0.5rem;
+  border-radius: 20px;
+  width: fit-content;
+  margin: 0.5rem auto;
+  color: hsl(var(--clr-orange), 0.7);
+}
+
+.card__error[aria-checked="true"] {
+  color: hsl(var(--clr-orange));
+}
+
+.card__error[aria-checked="false"] {
+  display: none;
+}
+
+.btn {
+  background-color: hsl(var(--clr-orange));
+  color: hsl(var(--clr-white));
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.825rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: hsl(var(--clr-white));
+  color: hsl(var(--clr-orange));
+  cursor: pointer;
+}

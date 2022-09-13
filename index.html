@@ -1,49 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Interactive rating component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <main class="wrapper">
 
-  <!-- Rating state start -->
+    <!-- Rating state start -->
+    <section class="card card--front" role="card" aria-selected="true">
+      <header class="card__header">
+        <img class="card__icon" src="./images/icon-star.svg" alt="icon star">
+      </header>
+      <h2 class="card__title">
+        How did we do?
+      </h2>
+      <p class="card__content">
+        Please let us know how we did with your support request. All feedback is appreciated
+        to help us improve our offering!
+      </p>
+      <div class="card__options">
+        <span data-value="1" role="option" class="card__option">1</span>
+        <span data-value="2" role="option" class="card__option">2</span>
+        <span data-value="3" role="option" class="card__option">3</span>
+        <span data-value="4" role="option" class="card__option">4</span>
+        <span data-value="5" role="option" class="card__option">5</span>
+      </div>
+      <button type="submit" id="submit" class="btn">
+        Submit
+      </button>
+      <span role="error" aria-checked="false" class="card__error">You need to choose one option</span>
+    </section>
 
-  How did we do?
+    <!-- Rating state end -->
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+    <!-- Thank you state start -->
+    <section class="card card--back" role="card" aria-selected="false">
+      <img src="./images/illustration-thank-you.svg" alt="thank you illustration">
+      <p class="card__result">
+        You selected <span id="result">4</span>
+        <!-- Add rating here --> out of 5
 
-  1 2 3 4 5
+      </p>
+      <h2 class="card__title">
+        Thank you!
+      </h2>
+      <p class="card__content">
+        We appreciate you taking the time to give a rating. If you ever need more support,
+        don’t hesitate to get in touch!
+      </p>
 
-  Submit
-
-  <!-- Rating state end -->
-
-  <!-- Thank you state start -->
-
-  You selected <!-- Add rating here --> out of 5
-
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  <!-- Thank you state end -->
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    </section>
+    <!-- Thank you state end -->
+  </main>
+  <script src="./scripts.js"></script>
 </body>
+
 </html>
